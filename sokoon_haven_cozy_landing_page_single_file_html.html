@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sokoon Haven — Your Home Away From Home</title>
+  <meta name="description" content="Sokoon Haven offers warm, cozy short & medium‑term stays designed for comfort, flexibility, and peace." />
+  <meta property="og:title" content="Sokoon Haven — Your Home Away From Home" />
+  <meta property="og:description" content="Warm, cozy short & medium‑term stays designed for comfort, flexibility, and peace." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sokoonhaven.example" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cream:#FAF6F1;
+      --sand:#EDE3D8;
+      --olive:#6D7F6A;
+      --terracotta:#C46A4A;
+      --ink:#2B2A2A;
+      --slate:#4A4A4A;
+      --white:#FFFFFF;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:18px;
+    }
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; background:var(--cream); color:var(--ink);
+      font-family:"Nunito Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6; font-size:16px;
+    }
+    .container{width:min(1120px, 92%); margin-inline:auto}
+    header{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.3) blur(8px);
+      background:rgba(250,246,241,.75); border-bottom:1px solid rgba(0,0,0,.06);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink)}
+    .brand-logo{width:36px; height:36px; border-radius:12px; background:linear-gradient(135deg,var(--olive), #8EA68A); display:grid; place-items:center; box-shadow:var(--shadow)}
+    .brand-logo svg{fill:#fff}
+    .brand-title{font-family:"Cormorant Garamond", serif; font-weight:600; font-size:1.25rem; letter-spacing:.3px}
+    nav a{color:var(--ink); text-decoration:none; padding:8px 12px; border-radius:10px; font-weight:600}
+    nav a:hover{background:rgba(0,0,0,.05)}
+    .btn{appearance:none; border:none; cursor:pointer; padding:12px 18px; border-radius:12px; font-weight:700; letter-spacing:.3px; text-decoration:none; display:inline-flex; align-items:center; gap:10px}
+    .btn-primary{background:var(--olive); color:#fff}
+    .btn-primary:hover{filter:brightness(.95)}
+    .btn-ghost{background:transparent; color:var(--olive); border:1px solid var(--olive)}
+    .btn-ghost:hover{background:rgba(109,127,106,.08)}
+
+    /* Hero */
+    .hero{position:relative; padding:72px 0 40px}
+    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:38px; align-items:center}
+    .eyebrow{letter-spacing:.18em; text-transform:uppercase; font-size:.8rem; color:var(--terracotta); font-weight:800}
+    h1{font-family:"Cormorant Garamond", serif; font-size:3rem; line-height:1.1; margin:10px 0 16px}
+    .lead{font-size:1.125rem; color:var(--slate)}
+    .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px}
+    .hero-card{background:var(--white); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
+    .hero-img{
+      aspect-ratio: 4/3; border-radius:var(--radius); overflow:hidden; position:relative;
+      background:linear-gradient(180deg, #d6d0c9, #cdbfb2);
+    }
+    .hero-img::after{
+      content:"Your cozy hero image"; position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-weight:700; letter-spacing:.2em; text-transform:uppercase; opacity:.55
+    }
+
+    /* Sections */
+    section{padding:64px 0}
+    .section-title{font-family:"Cormorant Garamond", serif; font-size:2.2rem; margin:.2rem 0 1rem}
+    .muted{color:var(--slate)}
+
+    /* How it works */
+    .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .step{background:var(--white); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); display:flex; gap:16px}
+    .step .icon{flex:0 0 44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--sand)}
+
+    /* Why guests love us */
+    .benefits{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+    .benefit{background:var(--white); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .benefit h4{margin:0 0 .4rem; font-size:1.05rem}
+
+    /* Featured stays */
+    .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .card{background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column}
+    .card-media{aspect-ratio: 16/10; background:linear-gradient(180deg,#c4b8aa,#b39e88); position:relative}
+    .card-media::after{content:"Add property image"; position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-weight:700; opacity:.55; letter-spacing:.18em; text-transform:uppercase}
+    .card-body{padding:18px}
+    .card h3{margin:.1rem 0 .35rem; font-size:1.2rem}
+    .meta{font-size:.95rem; color:var(--slate)}
+    .card-actions{margin-top:auto; padding:0 18px 18px}
+
+    /* Testimonials */
+    .testimonials{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
+    .quote{background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); padding:24px; position:relative}
+    .quote::before{content:"\201C"; position:absolute; top:-22px; left:16px; font-family:"Cormorant Garamond", serif; font-size:4rem; color:var(--terracotta); opacity:.25}
+    .quote .author{margin-top:10px; font-weight:700}
+
+    /* CTA band */
+    .cta{background:linear-gradient(135deg, var(--sand), var(--cream)); border:1px solid rgba(0,0,0,.06); border-radius:var(--radius); box-shadow:var(--shadow); padding:28px; display:flex; align-items:center; justify-content:space-between; gap:18px}
+
+    /* Footer */
+    footer{padding:50px 0 60px}
+    .footer-grid{display:grid; grid-template-columns:2fr 1fr 1fr; gap:18px}
+    .tiny{font-size:.9rem; color:var(--slate)}
+    .social{display:flex; gap:10px}
+    .social a{width:38px; height:38px; border-radius:12px; background:var(--sand); display:grid; place-items:center}
+
+    /* Utilities */
+    .pill{display:inline-block; padding:8px 12px; background:var(--sand); border-radius:999px; font-weight:700}
+    .spacer{height:20px}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+      .benefits{grid-template-columns:1fr 1fr}
+      .cards{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .cta{flex-direction:column; text-align:center}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <span class="brand-logo" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" role="img" aria-label="Leaf icon"><path d="M12 2C5 2 2 9 2 9s2 3 6 5c2 .9 5 1 7 0 4-2 7-5 7-5S19 2 12 2zm3 9c-3 2-7 2-10 0-.4-.3-.8-.7-1.2-1.1C4.8 8.6 8 5.9 12 6c4 .1 7.2 2.6 8.2 3.9-.3.3-.7.7-1.2 1.1z"/></svg>
+        </span>
+        <span class="brand-title">Sokoon Haven</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#stays">Stays</a>
+        <a href="#how">How it works</a>
+        <a href="#why">Why us</a>
+        <a href="#contact" class="btn btn-primary">Book a Stay</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Short & Medium‑Term Stays</div>
+        <h1>Your Home Away From Home</h1>
+        <p class="lead">Warm, cozy spaces designed for comfort, flexibility, and peace. Arrive, unwind, and live like you belong — for a week or a few months.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#stays">View Our Stays</a>
+          <a class="btn btn-ghost" href="#contact">Check Availability</a>
+        </div>
+        <div class="spacer"></div>
+        <div class="hero-card tiny">
+          <strong class="pill" aria-hidden="true">Thoughtful amenities</strong>
+          &nbsp;Fresh linens • Stocked kitchens • Fast Wi‑Fi • Flexible check‑in
+        </div>
+      </div>
+      <div class="hero-img" role="img" aria-label="Softly lit cozy living room placeholder image"></div>
+    </div>
+  </main>
+
+  <!-- How it works -->
+  <section id="how">
+    <div class="container">
+      <p class="eyebrow">Simple & Seamless</p>
+      <h2 class="section-title">How it works</h2>
+      <div class="steps" role="list">
+        <article class="step" role="listitem">
+          <span class="icon" aria-hidden="true">🏡</span>
+          <div>
+            <h3>Pick Your Perfect Stay</h3>
+            <p class="muted">Choose from curated apartments, cottages, and coastal retreats that match your vibe.</p>
+          </div>
+        </article>
+        <article class="step" role="listitem">
+          <span class="icon" aria-hidden="true">🧺</span>
+          <div>
+            <h3>Arrive & Unwind</h3>
+            <p class="muted">Everything’s prepared — fresh linens, cozy touches, and all the essentials.</p>
+          </div>
+        </article>
+        <article class="step" role="listitem">
+          <span class="icon" aria-hidden="true">🕰️</span>
+          <div>
+            <h3>Stay Flexible</h3>
+            <p class="muted">Short to medium‑term options, transparent pricing, and easy extensions.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why guests love us -->
+  <section id="why">
+    <div class="container">
+      <p class="eyebrow">Designed for Comfort</p>
+      <h2 class="section-title">Why guests love Sokoon Haven</h2>
+      <div class="benefits">
+        <div class="benefit">
+          <h4>Cozy Comfort</h4>
+          <p class="muted">Warm interiors, soft textures, and peaceful spaces that feel like home.</p>
+        </div>
+        <div class="benefit">
+          <h4>Flexible Stays</h4>
+          <p class="muted">Week‑long getaways or multi‑month stays — we adjust to you.</p>
+        </div>
+        <div class="benefit">
+          <h4>Hassle‑Free Booking</h4>
+          <p class="muted">Quick confirmations, clear communication, and simple check‑in.</p>
+        </div>
+        <div class="benefit">
+          <h4>Thoughtful Amenities</h4>
+          <p class="muted">Fully furnished, fast Wi‑Fi, stocked kitchens, and fresh towels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured stays -->
+  <section id="stays">
+    <div class="container">
+      <p class="eyebrow">Featured</p>
+      <h2 class="section-title">Our Stays</h2>
+      <div class="cards" role="list">
+        <article class="card" role="listitem">
+          <div class="card-media" role="img" aria-label="City apartment image placeholder"></div>
+          <div class="card-body">
+            <h3>City Apartment Hideaway</h3>
+            <p class="meta">Quiet, light‑filled space in the heart of the city. Perfect for work & weekend escapes.</p>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-ghost" href="#contact">View Details</a>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="card-media" role="img" aria-label="Countryside cottage image placeholder"></div>
+          <div class="card-body">
+            <h3>Countryside Cottage</h3>
+            <p class="meta">Nature views, morning birdsong, and a crackling fireplace for cozy nights.</p>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-ghost" href="#contact">View Details</a>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="card-media" role="img" aria-label="Coastal retreat image placeholder"></div>
+          <div class="card-body">
+            <h3>Coastal Retreat</h3>
+            <p class="meta">Wake up to sea breeze and evening strolls along the shore.</p>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-ghost" href="#contact">View Details</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <p class="eyebrow">Guest Love</p>
+      <h2 class="section-title">Words that warm our hearts</h2>
+      <div class="testimonials">
+        <figure class="quote">
+          <blockquote>
+            “I felt like I was staying at a friend’s place who thought of everything. The bed was heavenly!”
+          </blockquote>
+          <figcaption class="author">— Sarah M.</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>
+            “Perfect location, cozy vibes, and I extended my stay twice. Enough said.”
+          </blockquote>
+          <figcaption class="author">— James K.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section id="contact" aria-labelledby="cta-title">
+    <div class="container cta">
+      <div>
+        <p class="eyebrow" id="cta-title">Ready for your stay?</p>
+        <h2 class="section-title" style="margin-top:.2rem">Check availability today</h2>
+        <p class="muted">Tell us your dates and preferred location — we’ll handle the rest.</p>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap">
+        <a class="btn btn-primary" href="mailto:hello@sokoonhaven.com?subject=Booking%20Enquiry">Email Us</a>
+        <a class="btn btn-ghost" href="#top">Browse Stays</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:10px">
+          <span class="brand-logo" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M12 2C5 2 2 9 2 9s2 3 6 5c2 .9 5 1 7 0 4-2 7-5 7-5S19 2 12 2zm3 9c-3 2-7 2-10 0-.4-.3-.8-.7-1.2-1.1C4.8 8.6 8 5.9 12 6c4 .1 7.2 2.6 8.2 3.9-.3.3-.7.7-1.2 1.1z"/></svg>
+          </span>
+          <span class="brand-title">Sokoon Haven</span>
+        </div>
+        <p class="tiny">Cozy short & medium‑term stays. © <span id="year"></span> Sokoon Haven. All rights reserved.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p class="tiny">hello@sokoonhaven.com<br/>Melbourne, Australia</p>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <div class="social" aria-label="Social links">
+          <a href="#" aria-label="Instagram" title="Instagram">📷</a>
+          <a href="#" aria-label="Facebook" title="Facebook">👍</a>
+          <a href="#" aria-label="Pinterest" title="Pinterest">📌</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
