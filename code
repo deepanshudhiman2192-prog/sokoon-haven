@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sokoon Haven | Short & Medium Term Stays</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdfcf9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: "Georgia", serif;
+      color: #2b2b2b;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 0;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://source.unsplash.com/1600x900/?cozy,home,interior') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 8rem 2rem;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background: #c7a17a;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #a87f55;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-light {
+      background: #fff;
+    }
+
+    .section-alt {
+      background: #f7f4ef;
+    }
+
+    /* How It Works */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .step {
+      flex: 1;
+      min-width: 250px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    }
+
+    /* Benefits for Agents */
+    .agents {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .agents-text {
+      flex: 1;
+    }
+
+    .agents-img {
+      flex: 1;
+    }
+
+    .agents-img img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    /* Featured Stays */
+    .stays {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .stay {
+      flex: 1;
+      min-width: 280px;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .stay img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .stay-content {
+      padding: 1.5rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .testimonial {
+      flex: 1;
+      min-width: 280px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+      font-style: italic;
+    }
+
+    /* Contact Section */
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      background: #2b2b2b;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Your Home Away From Home</h1>
+    <p>Short & medium-term stays crafted for comfort, flexibility & warmth</p>
+    <a href="#stays" class="btn">Browse Our Stays</a>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section-light">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step"><h3>1. Choose Your Stay</h3><p>Select from our cozy short & medium-term options.</p></div>
+        <div class="step"><h3>2. Arrive & Settle In</h3><p>Move into a warm, welcoming home.</p></div>
+        <div class="step"><h3>3. Stay Your Way</h3><p>Enjoy flexibility & comfort, tailored to your needs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits for Agents -->
+  <section class="section-alt">
+    <div class="container agents">
+      <div class="agents-text">
+        <h2>🤝 Benefits for Agents</h2>
+        <p>1️⃣ <strong>Lease Onboarding Bonus</strong> – Receive a bonus equal to one week’s rent for every lease you help secure.</p>
+        <p>2️⃣ <strong>Reliable Tenant</strong> – With 2–5 year lease terms, we’re ready to step in as soon as a tenancy ends — no gaps, no guesswork.</p>
+        <p>3️⃣ <strong>Hassle-Free Maintenance</strong> – We cover the first $500 in repairs and maintenance with our trusted trades team, meaning less admin for you and your landlords.</p>
+      </div>
+      <div class="agents-img">
+        <img src="https://source.unsplash.com/600x400/?realestate,contract" alt="Agents and leasing">
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Guests Love Us -->
+  <section class="section-light">
+    <div class="container">
+      <h2>Why Guests Love Us</h2>
+      <ul>
+        <li>✔️ Flexible stays (short & medium term)</li>
+        <li>✔️ Cozy, fully furnished homes</li>
+        <li>✔️ Stress-free move-in and move-out</li>
+        <li>✔️ Warm, guest-first service</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Featured Stays -->
+  <section class="section-alt" id="stays">
+    <div class="container">
+      <h2>Featured Stays</h2>
+      <div class="stays">
+        <div class="stay">
+          <img src="https://source.unsplash.com/400x300/?apartment,cozy" alt="Cozy Apartment">
+          <div class="stay-content">
+            <h3>Modern Cozy Apartment</h3>
+            <p>Perfect for short-term city living with warmth & comfort.</p>
+          </div>
+        </div>
+        <div class="stay">
+          <img src="https://source.unsplash.com/400x300/?house,interior" alt="Suburban Home">
+          <div class="stay-content">
+            <h3>Charming Suburban Home</h3>
+            <p>A quiet, comfortable retreat for medium-term stays.</p>
+          </div>
+        </div>
+        <div class="stay">
+          <img src="https://source.unsplash.com/400x300/?studio,apartment" alt="Stylish Studio">
+          <div class="stay-content">
+            <h3>Stylish Studio</h3>
+            <p>Compact, cozy, and designed for flexibility & ease.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section-light">
+    <div class="container">
+      <h2>What Our Guests Say</h2>
+      <div class="testimonials">
+        <div class="testimonial">“The coziest place I’ve stayed in! Felt like home instantly.”</div>
+        <div class="testimonial">“Super flexible terms and warm interiors – highly recommend!”</div>
+        <div class="testimonial">“Smooth move-in, amazing support. A stress-free stay.”</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section-alt">
+    <div class="container contact">
+      <h2>Contact Us</h2>
+      <p>📞 Phone: +61 422 557 804</p>
+      <p>📧 Email: welcome@sokoonhaven.com</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sokoon Haven. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
